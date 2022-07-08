@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  app:
+    restart: always
+    build:
+      context: .
+      args:
+        - WITH_COMPOSER=true
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/var/www
+      - ./nginx/default.conf:/etc/nginx/sites-enabled/default.conf
+      - ./nginx/example.test.conf:/etc/nginx/sites-enabled/example.test.conf

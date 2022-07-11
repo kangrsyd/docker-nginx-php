@@ -1,10 +1,10 @@
 FROM php:8.1-fpm
 
 # Update image dependencies
-RUN apt-get update -y && apt-get install -y nginx nano git curl && apt-get clean
+RUN apt-get update -y && apt-get install -y nginx nano git curl zip unzip libpng-dev zlib1g-dev && apt-get clean
 
 # Install the PHP extensions for specified framework requirements
-RUN docker-php-ext-install bcmath mysqli
+RUN docker-php-ext-install bcmath mysqli gd zip
 RUN docker-php-ext-enable mysqli
 
 # Installing composer

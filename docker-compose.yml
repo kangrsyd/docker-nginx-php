@@ -11,8 +11,7 @@ services:
       - "80:80"
     volumes:
       - ./src:/var/www
-      - ./nginx/default.conf:/etc/nginx/sites-enabled/default.conf
-      - ./nginx/example.test.conf:/etc/nginx/sites-enabled/example.test.conf
+      - ./nginx:/etc/nginx/sites-enabled
       
 # Uncomment 4 lines below for connecting to another mysql networks (different container)
 #networks:
